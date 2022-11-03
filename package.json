@@ -1,0 +1,24 @@
+{
+  "name": "mapty_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ramy5/Mapty_App-Clone.git"
+  },
+  "author": "Ramy Sapry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ramy5/Mapty_App-Clone/issues"
+  },
+  "homepage": "https://github.com/Ramy5/Mapty_App-Clone#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-zip": "^5.1.0"
+  }
+}
