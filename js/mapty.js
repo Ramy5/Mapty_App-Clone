@@ -599,13 +599,13 @@ class App {
   async _addCityName(coords) {
     try {
       const data = await this._getApi(
-        `http://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${
-          coords[1]
-        }&appid=${this.#key}`
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${coords[0]}&longitude=${coords[1]}`
       );
 
-      this.#cityCode = data[0].country;
-      this.#city = data[0].name;
+      console.log(data);
+
+      this.#cityCode = data.countryCode;
+      this.#city = data.locality;
     } catch (err) {
       this._popup(`💥💥 Cannot find city name, please try another location :)`);
     }

@@ -81,6 +81,7 @@ body {
 
 .popup__info {
   min-width: 350px;
+  max-width: 400px;
   background-color: #fff;
   filter: drop-shadow(2px 2px 20px #222);
   line-height: 1.8;
