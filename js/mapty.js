@@ -602,8 +602,6 @@ class App {
         `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${coords[0]}&longitude=${coords[1]}`
       );
 
-      console.log(data);
-
       this.#cityCode = data.countryCode;
       this.#city = data.locality;
     } catch (err) {
