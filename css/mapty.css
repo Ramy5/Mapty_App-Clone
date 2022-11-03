@@ -1,0 +1,502 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+:root {
+  --main-color: #00c46a;
+  --second-color: #2d3439;
+  --main-line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 0;
+  }
+}
+
+.container {
+  height: calc(100vh - 2rem);
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+}
+
+/* //////// popups //////// */
+.pop {
+  font-size: 1.5rem;
+  border-radius: 10px;
+  line-height: var(--main-line-height);
+  z-index: 100000;
+}
+
+.popup {
+  font-weight: 600;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  padding: 2rem;
+  background-color: #42484d;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .popup {
+    width: 350px;
+  }
+}
+
+.span,
+.close__workout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 5px;
+  background-color: var(--main-color);
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 1.2rem;
+}
+
+.span:hover,
+.close__workout:hover {
+  background-color: #f00 !important;
+}
+
+.popup__info {
+  min-width: 350px;
+  background-color: #fff;
+  filter: drop-shadow(2px 2px 20px #222);
+  line-height: 1.8;
+  max-height: 100%;
+  font-weight: bold;
+  color: #222;
+  overflow: auto;
+  -ms-overflow-style: none; /* hidden scroll for IE and Edge */
+  scrollbar-width: none; /* hidden scroll for Firefox */
+}
+
+/* for hidden scroll in page */
+.popup__info::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .popup__info {
+    font-size: 1.2rem;
+    width: 250px;
+  }
+}
+
+.popup__info .span {
+  color: #fff;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  transition: 0.5s;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.popup__info .span:hover {
+  background-color: orangered !important;
+}
+
+.popup__info .flag {
+  width: 100%;
+  height: 200px;
+  margin-top: 1.8rem;
+}
+
+.popup__info .name {
+  font-size: 2.8rem;
+  padding-left: 2rem;
+  margin: 0;
+}
+
+.popup__info .data {
+  padding: 0 2.5rem 1rem;
+}
+
+.popup__info .data li span {
+  margin-left: 1.8rem;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.605);
+  font-size: 1.5rem;
+  z-index: 100000;
+}
+
+.loading span {
+  font-size: 100px;
+  font: 4rem "Rubik Moonrocks", cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: orange;
+  position: relative;
+  margin: 20px;
+}
+
+.loading span::before {
+  content: "";
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-mix-blend-mode: difference;
+  -moz-mix-blend-mode: difference;
+  -ms-mix-blend-mode: difference;
+  mix-blend-mode: difference;
+  animation: move 3s linear infinite;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: 75%;
+  }
+}
+/* //////// start aside //////// */
+aside {
+  background-color: var(--second-color);
+  height: 100%;
+  color: rgba(255, 255, 255, 0.831);
+  padding: 1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+  aside {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  aside {
+    width: 45%;
+  }
+}
+
+@media (min-width: 992px) {
+  aside {
+    width: 55%;
+    line-height: normal;
+  }
+}
+
+@media (min-width: 1200px) {
+  aside {
+    width: 40%;
+    padding: 3rem;
+  }
+}
+
+.aside__header {
+  margin-bottom: 2rem;
+  transition: all 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .aside__header {
+    padding-top: 1rem;
+  }
+}
+
+.aside__header img {
+  width: 30%;
+  height: 53px;
+}
+
+.aside__header .clear-all {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.aside__header .clear-all:hover {
+  background-color: #045f35;
+}
+
+.workouts .workout__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: #42484d;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  transition: 0.5s;
+  height: 100px;
+}
+
+@media (max-width: 767px) {
+  .workouts .workout__form {
+    padding: 0.5rem;
+    gap: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .workouts .workout__form {
+    gap: 10px;
+    padding: 0.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .workouts .workout__form {
+    gap: 15px;
+    padding: 0.8rem;
+  }
+}
+
+@media (min-width: 1290px) {
+  .workouts .workout__form {
+    padding: 1rem 2rem;
+  }
+}
+
+.workouts .workout__form input,
+select {
+  width: 70px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: #d6dee0;
+}
+
+@media (max-width: 767px) {
+  .workouts .workout__form input,
+  select {
+    width: 70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .workouts .workout__form input,
+  select {
+    width: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  .workouts .workout__form input,
+  select {
+    width: 90px;
+  }
+}
+
+.workouts .workout__form input:focus,
+select:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.workouts .workout__form label {
+  font-weight: bold;
+}
+
+/* lists */
+.workouts {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 65vh;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.workouts::-webkit-scrollbar {
+  display: none;
+}
+
+.workouts .workout {
+  position: relative;
+  margin-bottom: 1rem;
+  background-color: #42484d;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  line-height: var(--main-line-height);
+}
+
+.workouts .workout .workout__type {
+  margin-bottom: 1rem;
+}
+
+.workouts .workout .workout__type .workout__date {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.workouts .workout .workout__list span {
+  font-size: 12px;
+  color: #eaeaeaef;
+}
+
+.workouts .running {
+  border-left: 5px solid var(--main-color);
+}
+
+.workouts .cycling {
+  border-left: 5px solid #ffb545;
+}
+
+.copyright {
+  margin-top: 0.5rem;
+  text-align: center;
+  line-height: var(--main-line-height);
+  color: #d6dee089;
+}
+
+.copyright span,
+a {
+  color: #fff;
+}
+/* //////// end aside //////// */
+
+/* //////// start main //////// */
+main {
+  width: 60%;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  main {
+    height: 550px;
+    width: 100%;
+  }
+}
+/* //////// end main //////// */
+
+/* //////// framework //////// */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.c-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-page {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.unlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  background-color: rgba(34, 34, 34, 0.605);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+/* //////// framework //////// */
+
+/* //////// for js file //////// */
+.hidden__form {
+  height: 0 !important;
+  opacity: 0;
+  transform: translateY(-30rem) !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+}
+
+.info {
+  width: 20px;
+  height: 20px;
+  background-color: var(--main-color);
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1rem;
+  transition: 0.5s;
+}
+
+.info:hover {
+  background-color: #f00 !important;
+}
+
+.running__popup {
+  border-left: 5px solid var(--main-color);
+}
+
+.cycling__popup {
+  border-left: 5px solid #ffb545;
+}
+
+/* //////// from leaflet library //////// */
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: var(--second-color);
+  color: #fff;
+  border-radius: 0;
+  padding-right: 0.5rem;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: var(--second-color);
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="App for recording your workouts, get weather data, get city information and more.. ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapty App</title>
+  <link rel="icon shourcut" href="imgs/icon.png">
+  <link rel="stylesheet" href="css/mapty.css">
+  <!-- for leaflet map (use npm instead of this)-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <script defer src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+  <script defer src="js/mapty.js"></script>
+</head>
+
+<body>
+  <div class="container c-flex">
+    <!-- //////// popups //////// -->
+    <div class="overlay hidden"></div>
+
+    <!-- popup if user not allowed get position -->
+    <div class="popup pop c-page flex hidden">
+      <span class="span">X</span>
+      <p></p>
+    </div>
+
+
+    <!-- popup that contain country data from api -->
+    <div class="popup__info pop c-page hidden"></div>
+
+    <!-- loading untill get data spinner -->
+    <div class="loading hidden c-page c-flex">
+      <span>Loading</span>
+    </div>
+    <!-- //////// popups //////// -->
+
+    <aside>
+      <div class="aside__header">
+        <img src="imgs/logo.png" alt="mapty logo" srcset="">
+        <button class="hidden clear-all">Clear All</button>
+      </div>
+
+      <ul class="workouts unlist">
+        <form class="workout__form hidden__form" method="get" action="">
+          <div class="type flex">
+            <label for="select" class="label__type">Type</label>
+            <select name="type" id="select" class="select__type">
+              <option value="Running">Running</option>
+              <option value="Cycling">Cycling</option>
+            </select>
+          </div>
+
+          <div class="distance flex">
+            <label for="distance" class="label__distance">Distance</label>
+            <input class="input input__distance" type="text" placeholder="Km">
+          </div>
+
+          <div class="duration flex">
+            <label for="duration" class="label__duration">Duration</label>
+            <input class="input input__duration" type="text" placeholder="min">
+          </div>
+
+          <!-- only one of these two will apear in the page changing by select -->
+          <div class="cadence flex">
+            <label for="cadence" class="label__cadence">Cadence</label>
+            <input class="input input__cadence" type="text" placeholder="step/min">
+          </div>
+
+          <div class="elvation flex hidden">
+            <label for="elvation" class="label__elvation">Elev Gain</label>
+            <input class="input input__elvation" type="text" placeholder="meters">
+          </div>
+          <!-- only one of these two will apear in the page changing by select -->
+
+          <button class="hidden" type="submit"></button>
+        </form>
+      </ul>
+
+      <!-- copyright -->
+      <div class="copyright">
+        <p>&copy; Copyright by <span>Jonas Schmedtmann.</span></p>
+        <p>&reg; created by <a title="facebook profile" href="https://www.linkedin.com/in/ramy-al-sabry-98637b202/"
+            target="_blank">Ramy Sabry.</a></p>
+      </div>
+    </aside>
+
+    <!-- MAP -->
+    <main id="map"></main>
+  </div>
+</body>
+
+</html>
