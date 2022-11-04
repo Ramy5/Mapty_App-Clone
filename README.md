@@ -25,8 +25,8 @@ Recording running and cycling workouts and display them on the map, get informat
 <h2 id="preview">Preview</h2>
 <h3>Live Preview: https://mapty-app5.netlify.app/</h3>
 <div style="display:flex">
-  <img style="width: 500px" src="https://user-images.githubusercontent.com/74501165/199971294-3f5b28b0-93d4-429e-b5c2-a5c6ad4e992c.png" alt="Preview">
-  <img style="width: 500px" src="https://user-images.githubusercontent.com/74501165/199971601-48fd062c-22cc-4852-ae5d-c13f9a0da4e9.png" alt="Preview">
+  <img style="width: 400px" src="https://user-images.githubusercontent.com/74501165/199971294-3f5b28b0-93d4-429e-b5c2-a5c6ad4e992c.png" alt="Preview">
+  <img style="width: 400px" src="https://user-images.githubusercontent.com/74501165/199971601-48fd062c-22cc-4852-ae5d-c13f9a0da4e9.png" alt="Preview">
 </div>
 
 <h2 id="language">Languages</h2>
