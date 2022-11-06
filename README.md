@@ -1,6 +1,5 @@
 # Mapty_App-Clone (Focus On OOP)
-Recording running and cycling workouts and display them on the map, get information about the city and get weather data in the city by API. 
-
+Recording running and cycling workouts and displaying them on the map, getting information about the city, and getting weather data in the city by API.
 
 ## Table of Contents
 - <a href="#information">Information</a>
